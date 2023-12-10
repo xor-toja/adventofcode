@@ -59,12 +59,4 @@ for line in text_input.split("\n")[2:]:
     dest, rang, amnt = map(int, line.split())
     mapping_dict[f"{rang}-{rang + amnt}"] = dest - rang
 
-# idx = 0
-# temp
-# for rang, offset in mapping_dict.items():
-#     if idx % 2 != 0:
-
-#     else:
-#         seeds = [seed for seed in seeds if ]
-
 print(min(seeds))

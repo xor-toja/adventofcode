@@ -3,7 +3,7 @@ from collections import Counter
 
 class Card:
 
-    _ordered_ranks = "23456789TJQKA"
+    _ordered_ranks = "J23456789TQKA"
 
     def __init__(self, rank) -> None:
         self.rank = rank
@@ -46,7 +46,11 @@ class Hand:
     @property
     def strength(self):
         ranks = "".join(card.rank for card in self.cards)
-        cnt = list(Counter(ranks).values())
+        cnt = Counter(ranks)
+        cnt_no_j = {key: value for key, value in cnt.items() if key != "J"}
+        cnt_j = {key: value for key, value in cnt.items() if key == "J"}
+        
+
         if 5 in cnt:
             return "five-of-a-kind"
         if 4 in cnt:

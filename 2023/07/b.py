@@ -58,7 +58,7 @@ class Hand:
                 return "five-of-a-kind"
             return "full-house"
         if 3 in cnt.values():
-            if cnt.get('J') == 1:
+            if cnt.get('J') in (3,1):
                 return "four-of-a-kind"
             return "three-of-a-kind"
         if list(cnt.values()).count(2) == 2:
